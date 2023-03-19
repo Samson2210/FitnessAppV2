@@ -1,0 +1,17 @@
+{
+  "name": "ui",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^4.2.1",
+    "daisyui": "^2.51.3",
+    "tailwind": "^4.0.0"
+  },
+  "keywords": [],
+  "description": ""
+}

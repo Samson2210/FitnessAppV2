@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./dist/output.css" rel="stylesheet" />
+    <link href="./src/input.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+
+
+  <body style="padding-bottom: 70px">
+    <div style="margin-bottom: 180px; position: relative">
+      <div
+        style="margin-bottom: -300px; display: flex; justify-content: center"
+      >
+        <img src="mainb.jpeg" />
+      </div>
+      <div
+        style="margin-top: 15px"
+        class="navbar bg-base-100 flex items-center justify-between"
+      >
+        <div class="flex-1">
+          <a
+            class="btn btn-ghost normal-case text-xl"
+            style="position: absolute; left: 20px; top: 20px"
+            >GetFit</a
+          >
+        </div>
+        <div
+          class="dropdown dropdown-end"
+          style="position: absolute; right: 20px; top: 20px"
+        >
+          <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+            <div class="w-10 rounded-full">
+              <img src="profile.png" />
+            </div>
+          </label>
+          <ul
+            tabindex="0"
+            class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <a class="justify-between">
+                Profile
+                <span class="badge">New</span>
+              </a>
+            </li>
+            <li><a>Settings</a></li>
+            <li><a>Logout</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex justify-center" style="margin-top: 40px">
+        <input
+          type="text"
+          placeholder="Type here"
+          class="input input-bordered input-primary w-full max-w-xs"
+        />
+      </div>
+    </div>
+
+
+    <!-- dropdown -->
+    <div class="flex justify-center">
+      <div class="dropdown">
+        <label tabindex="0" class="btn m-1">Select the workout</label>
+        <ul
+          id="dropdown"
+          tabindex="0"
+          class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+        >
+          <li>
+            <a href="#" onclick="event.preventDefault()" id="item1"
+              >Arm Circles</a
+            >
+          </li>
+          <li>
+            <a href="#" onclick="event.preventDefault()" id="item2">Pushups</a>
+          </li>
+          <li>
+            <a href="#" onclick="event.preventDefault()" id="item3">Squats</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container mx-auto my-4 flex flex-wrap justify-between">
+      <div id="card1" class="card card-side p-10 shadow-2xl hidden">
+        <figure>
+          <img
+            src="https://hips.hearstapps.com/hmg-prod/images/workouts/2017/08/doublearmcircleforwards-1503499088.gif"/>
+        </figure>
+        <div class="card-body">
+          <!-- <div class="card p-10 m-3 flex-1 glass-effect">
+            <div class="flex justify-center">
+              <p class="rep-count" id="armcirclesCount">0</p>
+            </div>
+            <p class="text-sm">Armcircles</p>
+          </div> -->
+          <div class="card p-10 m-3 flex-1 glass-effect">
+            <div class="flex justify-center">
+              <div>
+                <span class="countdown font-mono text-6xl" id="armcirclesCount">
+                  <span style="--value:0;"></span>
+                </span>
+              </div>
+              <!-- <p class="rep-count" id="armcirclesCount">0</p> -->
+            </div>
+            <p class="text-sm">Armcircles</p>
+          </div>
+
+          <p>Cick below to Start or End the Workout</p>
+          <div class="card-actions justify-end">
+            <div class="flex justify-between m-3">
+              <!-- start -->
+
+              <label for="start" class="btn">Start</label>
+
+              <!-- stop -->
+              <label for="stop" class="btn">Stop</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="card2" class="card card-side p-10 shadow-2xl hidden">
+        <figure>
+          <img
+            src="https://media.gq.com/photos/59712c8b75d2965381f8bf69/16:9/w_2560,c_limit/2017-06_GQ_FITNESS-Push-Ups_3x2.jpg"
+            alt="Movie"
+          />
+        </figure>
+        <div class="card-body">
+          <!-- <div class="card p-10 m-3 flex-1 glass-effect">
+            <div class="flex justify-center">
+              <p class="rep-count" id="pushupsCount">0</p>
+            </div>
+            <p class="text-sm">Pushups</p>
+          </div> -->
+
+          <div class="card p-10 m-3 flex-1 glass-effect">
+            <div class="flex justify-center">
+              <div>
+                <span class="countdown font-mono text-6xl" id="pushupsCount">
+                  <span style="--value:0;"></span>
+                </span>
+              </div>
+              <!-- <p class="rep-count" id="pushupsCount">0</p> -->
+            </div>
+            <p class="text-sm">Pushups</p>
+          </div>
+      
+          <p>Cick below to Start or End the Workout</p>
+          <div class="card-actions justify-end">
+            <div class="flex justify-between m-3">
+              <!-- start -->
+              <div>
+                <label for="start" class="btn">Start</label>
+              </div>
+
+              <!-- stop -->
+              <div>
+                <label for="stop" class="btn">Stop</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="card3" class="card card-side p-10 shadow-2xl hidden">
+        <figure><img src="/squats.jpg" alt="Movie" /></figure>
+        <div class="card-body">
+          <!-- <div class="card p-10 m-3 flex-1 glass-effect">
+            <div class="flex justify-center">
+              <p class="rep-count" id="squatsCount">0</p>
+            </div>
+            <p class="box-title">Squats</p>
+          </div> -->
+          <div class="card p-10 m-3 flex-1 glass-effect">
+            <div class="flex justify-center">
+              <div>
+                <span class="countdown font-mono text-6xl" id="squatsCount">
+                  <span style="--value:0;"></span>
+                </span>
+              </div>
+            </div>
+            <p class="box-title">Squats</p>
+          </div>
+
+          <p>Cick below to Start or End the Workout</p>
+          <div class="card-actions justify-end">
+            <div class="flex justify-between m-3">
+              <!-- start -->
+              <div>
+                <label for="start" class="btn">Start</label>
+              </div>
+
+              <!-- stop -->
+              <div>
+                <label for="stop" class="btn">Stop</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <input type="checkbox" id="start" class="modal-toggle" />
+      <!-- <div class="modal">
+        <div class="modal-box relative">
+          <label
+            for="start1"
+            class="btn btn-sm btn-circle absolute right-2 top-2"
+            >✕</label
+          >
+          <h3 class="text-lg font-bold">
+            Workout Started!
+          </h3>
+          <p class="py-4">
+            work that bady work that bady
+          </p>
+        </div>
+      </div> -->
+<label for="start" class="modal cursor-pointer">
+  <label class="modal-box relative" for="">
+    <h3 class="text-lg font-bold">Congratulations random Internet user!</h3>
+    <p class="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+  </label>
+</label>
+
+
+      <input type="checkbox" id="stop" class="modal-toggle" />
+      <div class="modal">
+        <div class="modal-box relative">
+          <label for="stop" class="btn btn-sm btn-circle absolute right-2 top-2"
+            >✕</label
+          >
+          <h3 class="text-lg font-bold">
+            Workout Ended!
+          </h3>
+          <p class="py-4">
+            Good job working that bady!
+          </p>
+        </div>
+      </div>
+
+      <!-- <div id="card2" class="card card-side p-10 shadow-2xl hidden">
+      <figure><img src="https://media.gq.com/photos/59712c8b75d2965381f8bf69/16:9/w_2560,c_limit/2017-06_GQ_FITNESS-Push-Ups_3x2.jpg" alt="Movie"/></figure>
+      <div class="card-body ">
+
+        <div class="card p-10 m-3 flex-1 glass-effect">
+          <div class="flex justify-center">
+            <p class="rep-count" id="pushupsCount">0</p>
+          </div>
+          <p class="text-sm">Pushups</p>
+        </div>
+    
+        
+        
+        <p>Click the button to watch on Jetflix app.</p>
+        <div class="card-actions justify-end">
+          <div class="flex justify-between m-3">
+          
+        </div>
+        </div>
+      </div>
+    </div>
+
+  
+
+
+
+    <div id="card3" class="card card-side p-10 shadow-2xl hidden">
+      <figure><img src="https://www.realsimple.com/thmb/uBfN4PeNskniU3Gr3lCbRt8ZSL8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-squats-1-3d97915d64534c419262227f56174727.jpg" alt="Movie"/></figure>
+      <div class="card-body">
+    
+        <div class="card p-10 m-3 flex-1 glass-effect">
+          <div class="flex justify-center">
+            <p class="rep-count" id="squatsCount">0</p>
+          </div>
+          <p class="box-title">Squats</p>
+        </div>
+        
+        <p>Click the button to watch on Jetflix app.</p>
+        <div class="card-actions justify-end">
+          <div class="flex justify-between m-3">
+        
+        </div>
+        </div>
+      </div>
+    </div>
+     -->
+    </div>
+
+
+    <!-- start stop button -->
+    <!-- <div class="flex justify-between m-3">
+
+      <div>
+        <label for="start" class="btn">Start</label>
+
+        <input type="checkbox" id="start" class="modal-toggle" />
+        <div class="modal">
+          <div class="modal-box relative">
+            <label for="start" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            <h3 class="font-bold text-lg">Workout Started</h3>
+            <p class="py-4"></p>
+            <div class="modal-action">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+      <div>
+        <label for="stop" class="btn">Start</label>
+
+        <input type="checkbox" id="stop" class="modal-toggle" />
+        <div class="modal">
+          <div class="modal-box relative">
+            <label for="stop" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            <h3 class="font-bold text-lg">Workout Stopped</h3>
+           
+            <div class="modal-action">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- NAVBAR  -->
+    <div>
+      <div class="btm-nav btm-nav-xs">
+        <!-- home button -->
+        <a href="/index.html">
+          <button id="b1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+              />
+            </svg>
+          </button>
+        </a>
+
+        <!-- stats button -->
+        <button i="b2" class="active">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+        </button>
+
+        <!-- heart button -->
+        <button id="b3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+            />
+          </svg>
+        </button>
+
+        <!-- chart button -->
+        <a href="/chart/index.html">
+          <button id="b4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+              />
+            </svg>
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>

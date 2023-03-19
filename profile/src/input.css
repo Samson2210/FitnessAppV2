@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card {
+  background-color: transparent;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  text-align: center;
+}
+
+.card h2 {
+  margin-bottom: 4px;
+}
+
+.card p {
+  color: #000000;
+}
+
+.glass-effect {
+  background-color: rgba(43, 160, 202, 0.258);
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: calc(25% - 16px);
+  }
+}
+
+#header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 10px;
+  padding: 10px;
+}
+
+#date {
+  margin: 0px 15px 15px 0px;
+  width: 212px;
+  height: 11px;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+}

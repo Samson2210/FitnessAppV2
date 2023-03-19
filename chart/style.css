@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#graphPage{
+    /*     position: absolute; */
+        margin-top:-350px;
+    }
+     
+      .chartMenu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        background-color: #333;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+      }
+    
+      .chartCard {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+      }
+    
+      .chartBox {
+        width: 700px;
+        height: 350px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        background-color:#fbfbfbd9;
+      }
+    
+      @media only screen and (max-width: 700px) {
+        .chartBox {
+          width: 90%;
+          height: 45%;
+        }
+      }
+    
+      @media only screen and (max-width: 400px) {
+        .chartBox {
+          width: 300px;
+          height: 300px;
+        }
+      }
+    
+      @media only screen and (max-width: 300px) {
+        .chartBox {
+          width: 200px;
+          height: 200px;
+        }
+      }
