@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./dist/output.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Chart</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -44,11 +44,11 @@
   <div class="flex justify-center m-3">
     <div class="dropdown">
       <label tabindex="0" class="btn m-1">Select the data</label>
-      <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-        <li><a>ArmCircles </a></li>
-        <li><a>Squats</a></li>
-        <li><a>Pushups</a></li>
-      </ul>
+      <select id="fitness" tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+        <option >Pushups</option>
+        <option >Squats</option>
+        <option >Armcircles</option>
+      </select>
     </div>
 
   </div>
@@ -61,12 +61,11 @@
 
 
           <!-- NAVBAR  -->
-  <div>
     <div class="btm-nav btm-nav-xs">
 
 
       <!-- home button -->
-      <a href="./index.html">
+      <a href="../index.html">
       <button id="b1">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -76,7 +75,7 @@
       </a>
 
       <!-- stats button -->
-      <a href="/stats/index.html">
+      <a href="/stats/workout.html">
       <button i="b2">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -102,11 +101,8 @@
         </svg>
       </button>
     </div>
-  </div>
 
-
-      <script type="module" src='/script.js'></script>
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
-      <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+      <script type="module" src='./chart.js'></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

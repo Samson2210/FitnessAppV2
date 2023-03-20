@@ -1,33 +1,4 @@
-// const date = document.getElementById('date')
-// const greet = document.getElementById('greeting')
-// let counter = 0
-// setInterval(() => {
-// 		if(counter<=99){
-// 			counter+=2
-//             console.log(counter);
-// 		}
-//     document.getElementById('counterElement').style.setProperty('--value', counter)
-// }, 1000)
-
-// setInterval(() => {
-// 	    function beats(a,b){
-//             return Math.floor(Math.random()* (a - b + 2) + a)
-//         }
-//     let Bpm = beats(70,75)
-//     console.log(Bpm);
-//     document.getElementById('counterElement2').style.setProperty('--value', Bpm)
-// }, 1000)
-
-
-// let counter1 = 100
-// setInterval(() => {
-// 		if(counter1<=100){
-// 			counter1--
-// 		}
-//     document.getElementById('counterElement1').style.setProperty('--value', counter1)
-// }, 1000)
-
-
+console.log("Main script running")
 let d = new Date()
 const days = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY']
 const months = ['JANURAY', 'FEBRUARY', 'MARCH', 'APRIAL', 'MAY', 'JUNE', 'JULY', 'AUGUDT', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER']
@@ -84,6 +55,7 @@ onValue(starCountRef, (snapshot) => {
     let data = snapshot.val();
     Object.keys(data)
       .forEach(function eachKey(key) {
+        console.log(key)
         console.log(data)
         document.getElementById(key + 'Count').innerHTML = data[key];
       });
@@ -93,46 +65,3 @@ onValue(starCountRef, (snapshot) => {
 })
 
 
-//Stat page workout selector
-const item1 = document.getElementById("item1");
-const item2 = document.getElementById("item2");
-const item3 = document.getElementById("item3");
-const card1 = document.getElementById("card1");
-const card2 = document.getElementById("card2");
-const card3 = document.getElementById("card3");
-
-
-item1.addEventListener("click", ()=>{
-  showCard(card1)
-  hideCard(card2)
-  hideCard(card3)
-})
-
-item2.addEventListener("click", ()=>{
-  showCard(card2);
-  hideCard(card1);
-  hideCard(card3);
-})
-
-item3.addEventListener("click", ()=>{
-  showCard(card3);
-  hideCard(card1);
-  hideCard(card2);
-})
-
-function showCard(card) {
-  card.classList.remove("hidden");
-}
-
-function hideCard(card){
-  card.classList.add("hidden");
-}
-
-
-const button = document.getElementById("start")
-const output = document.getElementById("display")
-let i = 0
-button.addEventListener("click",()=>{
-  i++
-  console.log(i);
-})
